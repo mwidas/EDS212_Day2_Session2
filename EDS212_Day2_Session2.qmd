@@ -32,6 +32,42 @@ dfdy = D(fxyz, 'y')
 dfdy
 ```
 
-```{r}
+## Penguins Plot
 
+```{r}
+#need to know data source, variables to use, and type of point
+ggplot((data = penguins), aes(x = flipper_length_mm, y = body_mass_g)) +
+         geom_point() + 
+#added x,y, and title labels
+  labs(x = "Flipper length (mm)",
+       y = "Body Mass (g)",
+       title = "Palmer Penguins body dimensions")
+
+```
+
+```{r}
+#need to know data source, variables to use, and type of point
+#created a distinction by species for color
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species))  +
+         geom_point() + 
+#added x,y, and title labels
+  labs(x = "Flipper length (mm)",
+       y = "Body Mass (g)",
+       title = "Palmer Penguins body dimensions")
+
+theme_minimal()
+
+```
+
+```{r}
+#need to know data source, variables to use, and type of point
+
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g,))  +
+         geom_point( color = 'green') + 
+#added x,y, and title labels
+  labs(x = "Flipper length (mm)",
+       y = "Body Mass (g)",
+       title = "Palmer Penguins body dimensions")
+
+theme_minimal()
 ```
