@@ -2,4 +2,36 @@
 title: "EDS212_Day2_Session2"
 ---
 
-## 
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Plotting functions in ggplot2
+
+```{r}
+#write a function
+fx <- function(x) {
+  3 * x ^ 2 + 4
+}
+# ggplot likes a data frame, we made a data frame with 1 and 100 in the x column, c allows us to make a vector aka combine 1 and 100, we told what data to use, 
+ggplot(data.frame(x = c(1, 100)), aes(x = x)) + 
+#function to use is fx
+  geom_function(fun = fx)
+
+```
+
+## Partial Derivative Example
+
+```{r}
+#making a derivative
+fxyz = expression(2 * x * y + 3 * (x ^ 2) *(z ^ 3))
+#making the partial derivative with respect to y
+dfdy = D(fxyz, 'y')
+#show me the derivative with respect to y
+dfdy
+```
+
+```{r}
+
+```
